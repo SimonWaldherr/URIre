@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>URIre</title>
+  
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="http://selfcss.org/baf/css/baf.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="http://simonwaldherr.github.io/majaX.js/majax.js"></script>
+  <script src="./urire.js"></script>
+</head>
+<body>
+  <div class="input-prepend baf-input baf-group-x1"><label class="baf grey add-on" for="text-URI1" id="label-URI1">URI</label><input class="input-grey" name="text-URI1" maxlength="" id="uriin" size="16" onchange="parseUri();" onkeyup="parseUri();" type="text"/></div>
+  <div class="textarea" style="display:inline-block; width:45%; float:left; margin-right:5%;">
+    <label class="baf blue add-on w90" for="uriout" id="defaultt2">JS</label>
+    <textarea class="" id="uriout" name="uriout" onkeyup="" type="text"/></textarea>
+  </div>
+  <div class="textarea" style="display:inline-block; width:45%; float:left;">
+    <label class="baf green add-on w90" for="uriout2" id="defaultt2">PHP</label>
+    <textarea class="" id="uriout2" name="uriout2" onkeyup="" type="text"/></textarea>
+  </div>
+  <script>
+    function parseUri() {
+      var uriin = document.getElementById('uriin').value;
+      document.getElementById('uriout').value = JSON.stringify(urire(uriin), null, '  ');
+      majaX({url:'http://cdn.simon.waldherr.eu/projects/URIre/server.php', data:{url:encodeURI(uriin)}}, function(plain) {document.getElementById('uriout2').value = plain;});
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.input-prepend.baf-input.baf-group-x1 {
+  margin-bottom: 15px;
+}
+
+.input-prepend.baf-input.baf-group-x1 input {
+  margin-bottom: -9px;
+  height: 28px;
+}
+
+.textarea textarea {
+  height: 210px;
+}
+
+.textarea label.baf {
+  width: 90px !important;
+}
