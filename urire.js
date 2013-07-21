@@ -1,7 +1,7 @@
 
-/*jslint browser: true, regexp: true, indent: 2 */
+/*jslint regexp: true, indent: 2 */
 
-function urire(string) {
+var urire = function (string) {
   "use strict";
   var regex, i, urlparts = {};
 
@@ -56,4 +56,8 @@ function urire(string) {
     urlparts.clean.fileextension = urlparts.clean.path.split('.')[urlparts.clean.path.split('.').length - 1];
   }
   return urlparts.clean;
+};
+
+if (module !== undefined) {
+  module.exports.parse = urire();
 }
